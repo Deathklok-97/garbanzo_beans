@@ -28,18 +28,17 @@ defmodule Ecto.Schemas.Tests do
 
   defp yesterday, do: DateTime.utc_now() |> Date.add(-1)
 
-    defp valid_params(fields_with_types) do
-    valid_value_by_type = %{
-      string: fn -> Faker.Lorem.word() end,
-      date: fn -> Faker.DateTime.between(yesterday(), DateTime.utc_now()) end,
-      binary_id: fn -> Faker.Util.digit() end,
-      native_datetime: fn -> Faker.NaiveDateTime.between(yesterday(), NativeDateTime.utc_now()) end
-    }
+  defp valid_params(fields_with_types) do
+      valid_value_by_type = %{
+        string: fn -> Faker.Lorem.word() end,
+        date: fn -> Faker.DateTime.between(yesterday(), DateTime.utc_now()) end,
+        binary_id: fn -> Faker.Util.digit() end,
+        native_datetime: fn -> Faker.NaiveDateTime.between(yesterday(), NativeDateTime.utc_now()) end
+      }
 
-  for {field, type} <- fields_with_types, into: %{} do
-    {Atom.to_string(field), valid_value_by_type[type].()}
+    for {field, type} <- fields_with_types, into: %{} do
+      {Atom.to_string(field), valid_value_by_type[type].()}
+    end
   end
-
-end
 
 end
