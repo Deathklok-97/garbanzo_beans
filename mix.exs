@@ -42,7 +42,8 @@ defmodule GarbanzoBeans.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 2.7"},
       {:plug_cowboy, "~> 2.5"},
-      {:jason, "~> 1.3"}
+      {:jason, "~> 1.3"},
+      {:remix, "~> 0.0.2", only: :dev, runtime: false}
     ]
   end
 
