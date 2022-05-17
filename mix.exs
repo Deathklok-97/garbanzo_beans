@@ -43,7 +43,9 @@ defmodule GarbanzoBeans.Mixfile do
       {:cowboy, "~> 2.7"},
       {:plug_cowboy, "~> 2.5"},
       {:jason, "~> 1.3"},
-      {:remix, "~> 0.0.2", only: :dev, runtime: false}
+      {:remix, "~> 0.0.2", only: :dev, runtime: false},
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:faker, "~> 0.17.0"}
     ]
   end
 
