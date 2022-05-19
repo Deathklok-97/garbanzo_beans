@@ -45,7 +45,7 @@ defmodule GarbanzoBeans.Mixfile do
       {:jason, "~> 1.3"},
       {:remix, "~> 0.0.2", only: :dev, runtime: false},
       {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:faker, "~> 0.17.0"}
+      {:stream_data, "~> 0.5", only: :test}
     ]
   end
 
